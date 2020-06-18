@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="sqlalchemy_intro.sqlite" uuid="d26e60ab-3dd9-4a8c-a295-768de6029e1b">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/sqlalchemy_intro/db/sqlalchemy_intro.sqlite</jdbc-url>
+    </data-source>
+  </component>
+</project>

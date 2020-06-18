@@ -1,6 +1,7 @@
 import sqlalchemy as sa
+from sqlalchemy_intro.data.modelbase import SqlAlchemyBase
 
-class Package:
+class Package(SqlAlchemyBase):
     __tablename__ = 'packages'
 
     id = sa.Column(sa.String, primary_key=True)
@@ -16,3 +17,6 @@ class Package:
     author_email = sa.Column(sa.String, index=True)
 
     license = sa.Column(sa.String, index=True)
+
+    def __repr__(self):
+        return '<Package {}>'.format(self.id)
