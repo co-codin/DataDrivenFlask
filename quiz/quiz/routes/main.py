@@ -17,11 +17,11 @@ def answer():
     return render_template('answer.html')
 
 @main.route('/question')
-def answer():
+def question():
     return render_template('question.html')
 
 @main.route('/unanswer')
-def answer():
+def unanswer():
     return render_template('unanswer.html')
 
 @main.route('/users')
