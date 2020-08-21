@@ -27,6 +27,15 @@ def login():
         password = request.form['password']
 
         user = User.query.filter_by(name=name).first()
+
+        error_message = ''
+
+        if not user or not check_password_hash(user.password, password):
+            error_message = 'Could not login'
+
+        if not error_message:
+            login_user(user)
+            return redirect(url_for('main.index'))
     return render_template('login.html')
 
 @auth.route('/logout')
