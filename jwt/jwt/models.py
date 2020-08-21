@@ -7,19 +7,15 @@ class User(db.Model):
 
     @classmethod
     def lookup(cls, username):
-        return User.query.filter_by(username=username).one_or_none()
+        return cls.query.filter_by(username=username).one_or_none()
 
     @classmethod
-    def identity(cls, id):
+    def identify(cls, id):
         return cls.query.filter_by(id=id).one_or_none()
 
     @property
     def rolenames(self):
         return []
-
-    @property
-    def password(self):
-        return self.password
 
     @property
     def identity(self):
