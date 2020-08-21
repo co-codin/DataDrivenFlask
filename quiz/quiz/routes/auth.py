@@ -9,10 +9,24 @@ auth = Blueprint('auth', __name__)
 
 @auth.route('/register', methods=['GET', 'POST'])
 def register():
+    if request.method == 'POST':
+        name = request.form['name']
+        unhashed_password = request.form['password']
+
+        user = User(name=name, unhashed_password=unhashed_password)
+        db.session.add(user)
+        db.session.commit()
+
+        return redirect(url_for('auth.login'))
     return render_template('register.html')
 
 @auth.route('/login', methods=['GET', 'POST'])
 def login():
+    if request.method == 'POST':
+        name = request.form['name']
+        password = request.form['password']
+
+        user = User.query.filter_by(name=name).first()
     return render_template('login.html')
 
 @auth.route('/logout')
