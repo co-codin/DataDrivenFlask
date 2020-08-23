@@ -6,6 +6,8 @@ from .models import User
 
 from .commands import create_users, create_database
 
+from .routes import api
+
 def create_app():
     app = Flask(__name__)
 
@@ -18,5 +20,7 @@ def create_app():
 
     app.cli.add_command(create_users)
     app.cli.add_command(create_database)
+
+    app.register_blueprint(api)
 
     return app
