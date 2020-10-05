@@ -1,0 +1,15 @@
+.env
+.vscode
+*.pyc
+venv*
+env
+*.tags*
+__pycache__
+
+.cache
+_cache/*
+
+# local development
+database.db
+*.db
+*.db-journal
