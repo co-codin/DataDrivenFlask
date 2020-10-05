@@ -1,13 +1,18 @@
 class BaseConfig:
-    STOCK_API_BASE_URL = "https://financialmodelingprep.com/api/v3/"
+    TESTING = False
 
 class DevConfig(BaseConfig):
-    ENV = 'development'
+    pass
+
+class TestConfig(BaseConfig):
+    TESTING = True
+    DEBUG = False
 
 class ProdConfig(BaseConfig):
-    ENV = 'production'
+    DEBUG = False
 
 configurations = {
     'dev': DevConfig,
+    'test': TestConfig,
     'prod': ProdConfig,
 }
