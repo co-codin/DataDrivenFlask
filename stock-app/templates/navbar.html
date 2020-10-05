@@ -1,0 +1,8 @@
+<nav class="navbar navbar-light bg-light justify-content-between">
+    <a class="navbar-brand">Stock App</a>
+    <ul class="navbar-nav mr-auto">
+        <li class="nav-item {% if request.url_rule.endpoint == 'index' %} active {% endif %}">
+            <a class="nav-link" href="{{ url_for('index') }}">Home</a>
+        </li>
+    </ul>
+</nav>

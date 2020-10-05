@@ -1,0 +1,10 @@
+
+<h1> View your portfolio </h1>
+
+<ul>
+    {% for ticker in ['AAPL', 'NTAP', 'FB'] %}
+        <li>
+            <a href="{{ url_for('view_stock', ticker=ticker) }}">{{ ticker }}</a>
+        </li>
+    {% endfor %}
+</ul>
