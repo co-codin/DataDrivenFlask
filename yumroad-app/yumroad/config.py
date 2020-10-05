@@ -1,7 +1,7 @@
 import os
 
 class BaseConfig:
-    pass
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 class DevConfig(BaseConfig):
     SQLALCHEMY_DATABASE_URI = 'sqlite://dev.db'
