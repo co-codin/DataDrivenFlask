@@ -10,16 +10,8 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" crossorigin="anonymous">
     </head>
     <body>
-        <nav class="navbar navbar-light bg-light justify-content-between">
-            <a class="navbar-brand">Stock App</a>
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item {% if request.url_rule.endpoint == 'index' %} active {% endif %}">
-                    <a class="nav-link" href="{{ url_for('index') }}">Home</a>
-                </li>
-            </ul>
-        </nav>
-
-        <div class="container mt-3">
+       {% include 'navbar.html' %}
+       <div class="container mt-3">
            {% block content %}{% endblock %}
        </div>
     </body>
